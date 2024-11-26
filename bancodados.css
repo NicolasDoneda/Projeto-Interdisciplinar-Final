@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -19,18 +18,25 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
-#biografia_titulo {
+#biografia {
     color: #083344;
     font-size: 28px;
     font-weight: 600;
     font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
 }
 
 .navigation-buttons {
     display: flex;
-    gap: 15px;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .nav-button {
@@ -42,6 +48,7 @@ body {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    margin: 5px;
 }
 
 .nav-button:hover {
@@ -53,7 +60,7 @@ body {
 
 /* Conteúdo principal */
 .boxpaiconteudo {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 40px auto;
     background-color: white;
     border-radius: 15px;
@@ -65,51 +72,21 @@ body {
 .boxfilhoconteudo {
     display: flex;
     gap: 30px;
-}
-
-#box-imagem {
-    flex-shrink: 0;
-    display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.boxfilhoconteudo img {
-    width: 250px;
-    height: 320px;
-    object-fit: cover;
+.img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-#resumo {
-    background-color: #083344;
-    color: white;
-    padding: 10px 15px;
-    margin: 15px 0;
-    border-radius: 8px;
-    text-align: center;
-}
-
-#boxborda {
-    border: 2px solid #083344;
-    border-radius: 10px;
-    padding: 15px;
-    width: 250px;
-}
-
-.tituloresumo {
-    color: #083344;
-    font-weight: 600;
-    margin-bottom: 5px;
-}
-
-.textoresumo {
-    color: #555;
-}
-
 .conteudo-texto {
-    flex: 1;
+    width: 100%;
+    padding: 0 15px;
 }
 
 #titulo {
@@ -122,4 +99,132 @@ body {
 .texto, #textoimagem {
     color: #333;
     line-height: 1.8;
+}
+
+.boxmaeconteudo {
+    max-width: 1500px;
+    margin: 40px auto;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.imagem {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.boxfilhaconteudo {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Media Queries */
+@media screen and (min-width: 768px) {
+    .boxpaicabecalho {
+        flex-wrap: nowrap;
+    }
+
+    #biografia {
+        width: auto;
+        text-align: left;
+        margin-bottom: 0;
+    }
+
+    .navigation-buttons {
+        width: auto;
+        justify-content: flex-end;
+    }
+
+    .boxfilhoconteudo {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .conteudo-texto {
+        flex: 1;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav-button {
+        font-size: 0.9em;
+        padding: 6px 10px;
+        margin: 3px;
+    }
+
+    .boxpaiconteudo, 
+    .boxmaeconteudo {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    #biografia {
+        font-size: 24px;
+    }
+}
+/* Correções para evitar sobreposição de textos por imagens */
+
+.boxfilhoconteudo {
+    flex-direction: column; /* Garantir empilhamento em telas pequenas */
+}
+
+.img, .imagem {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 15px; /* Espaçamento entre imagem e texto */
+}
+
+/* Ajustando texto para não ser comprimido */
+.conteudo-texto {
+    flex: 1; /* Ocupa espaço restante */
+    min-width: 300px; /* Garante que o texto não fique muito estreito */
+}
+
+/* Media Queries refinadas */
+@media screen and (min-width: 768px) {
+    .boxfilhoconteudo {
+        flex-direction: row; /* Lado a lado para telas maiores */
+        gap: 20px; /* Espaçamento entre itens */
+    }
+
+    .img, .imagem {
+        max-width: 50%; /* Divide espaço com o texto */
+    }
+
+    .conteudo-texto {
+        max-width: 50%; /* Divide espaço com a imagem */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .boxpaiconteudo, .boxmaeconteudo {
+        margin: 15px;
+        padding: 10px;
+    }
+
+    #biografia {
+        font-size: 18px;
+    }
+
+    .nav-button {
+        font-size: 0.8em;
+        padding: 5px 10px;
+    }
+
+    .img, .imagem {
+        margin-bottom: 10px;
+    }
+
+    .conteudo-texto {
+        font-size: 0.9em; /* Ajustar tamanho do texto */
+    }
 }

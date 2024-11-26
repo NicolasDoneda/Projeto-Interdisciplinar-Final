@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +10,7 @@ body {
     background-color: #f4f7f9;
 }
 
-/* Cabeçalho redesenhado */
+/* Responsive Cabeçalho */
 .boxpaicabecalho {
     background-color: #ffffff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -19,6 +18,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 #biografia_titulo {
@@ -26,22 +26,29 @@ body {
     font-size: 28px;
     font-weight: 600;
     font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
 }
 
 .navigation-buttons {
     display: flex;
-    gap: 15px;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .nav-button {
     text-decoration: none;
     color: #083344;
     font-weight: 500;
-    padding: 8px 15px;
+    padding: 8px 12px;
     border-radius: 20px;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    margin: 5px;
 }
 
 .nav-button:hover {
@@ -51,35 +58,38 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Conteúdo principal */
+/* Conteúdo principal responsivo */
 .boxpaiconteudo {
     max-width: 1200px;
-    margin: 40px auto;
+    margin: 20px auto;
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     overflow: hidden;
-    padding: 30px;
+    padding: 20px;
 }
 
 .boxfilhoconteudo {
     display: flex;
-    gap: 30px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
-#box-imagem {
-    flex-shrink: 0;
+#box {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 .boxfilhoconteudo img {
-    width: 250px;
-    height: 320px;
+    max-width: 250px;
+    height: auto;
     object-fit: cover;
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
 }
 
 #resumo {
@@ -89,27 +99,21 @@ body {
     margin: 15px 0;
     border-radius: 8px;
     text-align: center;
+    width: 100%;
 }
 
 #boxborda {
     border: 2px solid #083344;
     border-radius: 10px;
     padding: 15px;
-    width: 250px;
-}
-
-.tituloresumo {
-    color: #083344;
-    font-weight: 600;
-    margin-bottom: 5px;
-}
-
-.textoresumo {
-    color: #555;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
 }
 
 .conteudo-texto {
-    flex: 1;
+    width: 100%;
+    padding: 0 15px;
 }
 
 #titulo {
@@ -117,9 +121,64 @@ body {
     border-bottom: 3px solid #083344;
     padding-bottom: 10px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .texto, #textoimagem {
     color: #333;
     line-height: 1.8;
+}
+
+/* Media Queries para diferentes tamanhos de tela */
+@media screen and (min-width: 768px) {
+    .boxpaicabecalho {
+        flex-wrap: nowrap;
+    }
+
+    #biografia_titulo {
+        width: auto;
+        text-align: left;
+        margin-bottom: 0;
+    }
+
+    .navigation-buttons {
+        width: auto;
+        justify-content: flex-end;
+    }
+
+    .boxfilhoconteudo {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    #box {
+        width: auto;
+        align-items: flex-start;
+    }
+
+    .boxfilhoconteudo img {
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
+
+    #boxborda {
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav-button {
+        font-size: 0.9em;
+        padding: 6px 10px;
+        margin: 3px;
+    }
+
+    .boxpaiconteudo {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .conteudo-texto {
+        padding: 0 10px;
+    }
 }

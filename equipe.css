@@ -151,27 +151,27 @@ border-top: 1px solid rgba(255,255,255,0.1);
 }
 
     /* teste pra deixar responsivo, caso alteratem algo, não mexam nisso pfv to testando - Nicolas*/
-        @media (max-width: 768px) {
-            .boxpaicabecalho {
-                flex-direction: column;
-                align-items: center;
-            }
+            @media (max-width: 768px) {
+                .boxpaicabecalho {
+                    flex-direction: column;
+                    align-items: center;
+                }
 
-            .navigation-buttons {
-                margin-top: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
+                .navigation-buttons {
+                    margin-top: 15px;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
 
-            .team-container {
-                flex-direction: column;
-                align-items: center;
-            }
+                .team-container {
+                    flex-direction: column;
+                    align-items: center;
+                }
 
-            .team-member {
-                width: 90%;
-                max-width: 400px;
-            }
+                .team-member {
+                    width: 90%;
+                    max-width: 400px;
+                }
 
             footer {
                 flex-direction: column;
